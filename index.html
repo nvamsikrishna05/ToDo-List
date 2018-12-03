@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <title>ToDo List</title>
 </head>
 <body>
-    
+
+    <div>
+        <form action="#" id="taskForm">
+            <input type="text" name="newTask" id="newTask" placeholder="Add a new Task">
+
+            <input type="submit" value="Submit" id="submitTask">
+        </form>
+    </div>
+
+    <div>
+        <ul id="toDoList">
+
+        </ul>
+        <button id="clearAll">Clear All</button>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
