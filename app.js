@@ -3,6 +3,7 @@ const newTask = document.querySelector('#newTask');
 const toDoList = document.querySelector('#toDoList');
 const form = document.querySelector('#taskForm');
 const clearAll = document.querySelector('#clearAll');
+const filter = document.querySelector('#filterTasks');
 
 
 //Load all Event Listeners
@@ -19,6 +20,9 @@ function loadEventListeners(){
 
     //ClearAll Listener
     clearAll.addEventListener('click', clearAllTasks);
+
+    //Filter Tasks
+    filter.addEventListener('keyup', filterTasks);
 }
 
 function setUI(){
@@ -28,6 +32,18 @@ function setUI(){
     else{
         clearAll.disabled = false;
     }
+}
+
+function filterTasks(e){
+    allTasks = document.querySelectorAll('.card');
+    text= e.target.value.toLowerCase();
+    allTasks.forEach(function(task){
+        if(task.textContent.toLowerCase().indexOf(text) === -1){
+            task.style.display = 'none';
+        }else{
+            task.style.display = 'flex';
+        }
+    });
 }
 
 
