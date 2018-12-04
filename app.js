@@ -37,8 +37,8 @@ function addTask(e){
         alert('Please add a Task');
     }
     else{
-        li = createElement('li',newTask.value,'');
-        a = createElement('a','X','clearTask');
+        li = createElement('li',newTask.value.trim(),'card card-content');
+        a = createElement('a','','clearTask delete');
         li.appendChild(a);
 
         //Adding Task to the ToDo List
@@ -58,7 +58,8 @@ function createElement(element,textContent,className){
 }
 
 function clearSelectedTask(e){
-    if(e.target.className === 'clearTask'){
+    
+    if(e.target.classList.contains('clearTask')){
         let task = e.target.parentElement;
         toDoList.removeChild(task);
     }
